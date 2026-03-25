@@ -37,7 +37,30 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+.tooltip-text {
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    cursor: pointer;
+}
 
+/* Tooltip */
+.tooltip-text:hover::after {
+    content: attr(data-full);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 250px;
+    background: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 10;
+    white-space: normal;
+}
 /* Each item */
 .grid-item {
     width: 32%;
@@ -487,10 +510,11 @@
                 <img src="./assets/img/chakkralogo.png" alt="Cloud Kitchen">
                 <div class="img-caption">
                     <h5 class="fg-theme">Cloud Kitchen</h5>
-                    <p>Built a cloud kitchen platform enabling customers to order food online with seamless payment integration via Razorpay.
-Implemented order workflow from placement to delivery, including assignment to delivery personnel and real-time status updates.
-Developed an admin dashboard to manage customer data, track delivered orders, and generate detailed reports.</p>
-                </div>
+					<p class="tooltip-text" 
+					   data-full="Developed a cloud kitchen platform with online ordering, Razorpay payment integration, delivery assignment, along with an admin dashboard for managing customers and reports.">
+					   Developed a cloud kitchen platform with online ordering, Razorpay payment integration, delivery assignment, along with an admin dashboard...
+					</p>                
+				</div>
             </a>
         </div>
     </div>
