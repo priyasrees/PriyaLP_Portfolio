@@ -849,7 +849,9 @@
           </form>
         </div>
         <div class="col-12">
-        <p class="text-center mb-0 mt-4">Copyright &copy; 2025</p>
+        <p class="text-center mb-0 mt-4">
+		  Copyright &copy; <span id="year"></span>
+		</p>
 
         </div>
       </div>
@@ -882,6 +884,8 @@
   <script src="./assets/js/topbar-virtual.js"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  
+  <script>
+	  document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
